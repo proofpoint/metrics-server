@@ -3,7 +3,7 @@ COPY . /go/src/github.com/kubernetes-incubator/metrics-server
 RUN cd /go/src/github.com/kubernetes-incubator/metrics-server && \
     make _output/amd64/metrics-server
 
-FROM gcr.io/distroless/static@sha256:08322afd57db6c2fd7a4264bf0edd9913176835585493144ee9ffe0c8b576a76
+FROM gcr.io/distroless/static@sha256:c6d5981545ce1406d33e61434c61e9452dad93ecd8397c41e89036ef977a88f4
 
 COPY --from=builder /go/src/github.com/kubernetes-incubator/metrics-server/_output/amd64/metrics-server /
 
